@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F4F6FA">
+<title>{{PAGE_TITLE}}</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<style>
+/*STYLE*/
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div id="stale" class="lg-warn" role="status" hidden></div>
+  <h1 class="lg-title">{{TITLE}}</h1>
+  <p class="lg-sub">{{SUBTITLE}}</p>
+
+  <label class="fld" for="team">Team</label>
+  <div class="sel"><select id="team"></select></div>
+
+  <div id="hero"></div>
+
+  <div class="tabs" role="tablist" aria-label="Sections">
+    <button type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="true">Schedule</button>
+    <button type="button" role="tab" id="tab-scores" aria-controls="panel-scores" aria-selected="false" tabindex="-1">Scores</button>
+    <button type="button" role="tab" id="tab-standings" aria-controls="panel-standings" aria-selected="false" tabindex="-1">Standings</button>
+  </div>
+  <section id="panel-schedule" role="tabpanel" aria-labelledby="tab-schedule">
+    <label class="tgl"><input type="checkbox" id="past"><span class="tgl-track" aria-hidden="true"></span>Show played games</label>
+    <div id="schedule"></div>
+  </section>
+  <section id="panel-scores" role="tabpanel" aria-labelledby="tab-scores" hidden>
+    <div id="scores"></div>
+  </section>
+  <section id="panel-standings" role="tabpanel" aria-labelledby="tab-standings" hidden>
+    <div id="standings"></div>
+    <p class="cap">GB is games behind the division leader. PF, PA and +/− come from posted scores.</p>
+  </section>
+
+  <hr class="rule">
+  <p class="cap" id="foot"></p>
+  <noscript><p class="lg-empty">This schedule needs JavaScript turned on.</p></noscript>
+</main>
+<script id="league-data" type="application/json">{{DATA}}</script>
+<script>
+/*SCRIPT*/
+</script>
+</body>
+</html>
